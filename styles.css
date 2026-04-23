@@ -424,7 +424,13 @@ section {
     height: 2px;
     background: linear-gradient(90deg, var(--color-accent-blue), var(--color-accent-violet));
     box-shadow: 0 0 10px var(--glow-blue);
+}
 
+.title-line-decoration-connect {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-accent-blue), var(--color-accent-violet));
+    box-shadow: 0 0 10px var(--glow-blue);
     margin: 0 auto;
 }
 
