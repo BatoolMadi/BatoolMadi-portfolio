@@ -33,6 +33,12 @@ body {
     font-weight: 400;
 }
 
+body[dir="rtl"] {
+    font-family: 'Cairo', sans-serif;
+    line-height: 1.8;
+    letter-spacing: 0;
+}
+
 /* Navigation */
 .nav {
     position: fixed;
