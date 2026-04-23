@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Portfolio | Data Science & Intelligent Systems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <div class="nav-name">
+                <span class="nav-name-main" data-i18n="nav_name">Batool Madi</span>
+                <span class="nav-name-sub" data-i18n="nav_subtitle">
+                    AI Engineer • Data Scientist • Web Systems Builder
+                </span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#expertise" class="nav-link" data-i18n="nav_expertise">Expertise</a></li>
+                <li><a href="#projects" class="nav-link" data-i18n="nav_projects">Projects</a></li>
+                <li><a href="#experience" class="nav-link" data-i18n="nav_experience">Experience</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+            </ul>
+            <div class="language-switch">
+                <button id="lang-toggle">
+                    <span class="lang-icon">🌐</span>
+                    <span class="lang-text">EN</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 3D Canvas Container -->
+    <div class="canvas-container" id="canvas-container">
+        <canvas id="three-canvas"></canvas>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line" data-i18n="hero_line1">Building Intelligent Systems</span>
+                    <span class="title-line" data-i18n="hero_line2">That Transform Data Into</span>
+                    <span class="title-line title-accent" data-i18n="hero_line3">Actionable Intelligence</span>
+                </h1>
+                <p class="hero-tagline" data-i18n="hero_tagline">
+                    Specialize in AI and Data Science, building intelligent web systems 
+                    that solve real-world problems through practical and research-driven approaches.
+                </p>
+            </div>
+            <div class="profile-card">
+                <div class="profile-image-wrapper">
+                    <div class="orbit orbit-1"></div>
+                    <div class="orbit orbit-2"></div>
+                    <div class="orbit orbit-3"></div>
+
+                    <div class="electron electron-1"></div>
+                    <div class="electron electron-2"></div>
+
+                    <img src="images/Portfolio pictuer.jpeg" class="profile-image" alt="My Photo">
+                    
+                    <div class="profile-glow"></div>
+                </div>
+                <div class="profile-tags">
+                    <span class="tag" data-i18n="tag_cv">Computer Vision</span>
+                    <span class="tag" data-i18n="tag_nlp">NLP</span>
+                    <span class="tag" data-i18n="tag_fullstack">Full-Stack Development</span>
+                    <span class="tag" data-i18n="tag_ai">AI Systems</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="about_title">About</h2>
+                <div class="title-line-decoration"></div>
+            </div>
+            <div class="about-content">
+                <p class="about-text" data-i18n="about_p1">
+                    I am an AI Engineer and Data Scientist who bridges the gap between cutting-edge research 
+                    and practical application. My work combines deep learning, statistical analysis, and 
+                    intelligent web systems to create solutions that are both technically sophisticated and 
+                    genuinely useful.
+                </p>
+                <p class="about-text" data-i18n="about_p2">
+                    With a foundation in machine learning pipelines, computer vision, and natural language 
+                    processing, I build systems that learn, adapt, and perform at scale. Every project 
+                    begins with understanding the problem deeply, then applying the right combination of 
+                    algorithms, infrastructure, and engineering excellence.
+                </p>
+                <p class="about-text" data-i18n="about_p3">
+                    My philosophy centers on real-world problem solving: intelligence that matters, 
+                    systems that work, and code that endures. Whether it's deploying production ML models, 
+                    architecting data pipelines, or building intelligent web applications, I approach each 
+                    challenge with rigor, creativity, and a commitment to excellence.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- AI Expertise Section -->
+    <section class="expertise" id="expertise">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="expertise_title">AI Expertise</h2>
+                <div class="title-line-decoration"></div>
+            </div>
+
+            <div class="expertise-grid">
+
+                <div class="expertise-card">
+                    <div class="card-icon">
+                        <img src="icons/brain.png" alt="Deep Learning">
+                    </div>
+                    <h3 class="card-title" data-i18n="exp_dl_title">Deep Learning</h3>
+                    <p class="card-description" data-i18n="exp_dl_desc">
+                        Building and training neural networks for classification, prediction, 
+                        and pattern recognition tasks using real-world datasets.
+                    </p>
+                    <div class="card-metrics">
+                        <span class="metric" data-i18n="exp_dl_m1">High Accuracy Models</span>
+                        <span class="metric" data-i18n="exp_dl_m2">Production-Ready</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="card-icon">
+                        <img src="icons/nlp.png" alt="Natural Language Processing">
+                    </div>
+                    <h3 class="card-title" data-i18n="exp_nlp_title">Natural Language Processing</h3>
+                    <p class="card-description" data-i18n="exp_nlp_desc">
+                        Developing NLP systems for text classification, information extraction, 
+                        and understanding using models like BERT.
+                    </p>
+                    <div class="card-metrics">
+                        <span class="metric" data-i18n="exp_nlp_m1">BERT/GPT Integration</span>
+                        <span class="metric" data-i18n="exp_nlp_m2">Real-Time Processing</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="card-icon">
+                        <img src="icons/vision.png" alt="Computer Vision">
+                    </div>
+                    <h3 class="card-title" data-i18n="exp_cv_title">Computer Vision</h3>
+                    <p class="card-description" data-i18n="exp_cv_desc">
+                        Creating computer vision models for image classification and object detection 
+                        using architectures like CNNs and YOLO.
+                    </p>
+                    <div class="card-metrics">
+                        <span class="metric" data-i18n="exp_cv_m1">YOLO/ResNet</span>
+                        <span class="metric" data-i18n="exp_cv_m2">Edge Deployment</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="card-icon">
+                        <img src="icons/deep-learning.png" alt="ML Pipelines">
+                    </div>
+                    <h3 class="card-title" data-i18n="exp_ml_title">ML Pipelines</h3>
+                    <p class="card-description" data-i18n="exp_ml_desc">
+                        Building end-to-end ML workflows from data preprocessing to model training 
+                        and evaluation.
+                    </p>
+                    <div class="card-metrics">
+                        <span class="metric" data-i18n="exp_ml_m1">MLOps Ready</span>
+                        <span class="metric" data-i18n="exp_ml_m2">Auto-Scaling</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="card-icon">
+                        <img src="icons/settings.png" alt="Intelligent Web Systems">
+                    </div>
+                    <h3 class="card-title" data-i18n="exp_web_title">Intelligent Web Systems</h3>
+                    <p class="card-description" data-i18n="exp_web_desc">
+                        Integrating AI models into web applications to deliver smart and interactive 
+                        user experiences.
+                    </p>
+                    <div class="card-metrics">
+                        <span class="metric" data-i18n="exp_web_m1">Full-Stack AI</span>
+                        <span class="metric" data-i18n="exp_web_m2">Real-Time Inference</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="card-icon">
+                        <img src="icons/exploratory-analysis.png" alt="Data Science">
+                    </div>
+                    <h3 class="card-title" data-i18n="exp_ds_title">Data Science</h3>
+                    <p class="card-description" data-i18n="exp_ds_desc">
+                        Transforming raw data into actionable insights through statistical analysis, 
+                        visualization, and predictive modeling.
+                    </p>
+                    <div class="card-metrics">
+                        <span class="metric" data-i18n="exp_ds_m1">Advanced Analytics</span>
+                        <span class="metric" data-i18n="exp_ds_m2">Data-Driven Decisions</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Capabilities -->
+            <div class="capabilities-section">
+                <h3 class="capabilities-title" data-i18n="cap_title">Model Capabilities</h3>
+                <div class="capabilities-badges">
+                    <span class="capability-badge" data-i18n="cap_classification">Classification</span>
+                    <span class="capability-badge" data-i18n="cap_extraction">Extraction</span>
+                    <span class="capability-badge" data-i18n="cap_analysis">Analysis</span>
+                    <span class="capability-badge" data-i18n="cap_prediction">Prediction</span>
+                    <span class="capability-badge" data-i18n="cap_generation">Generation</span>
+                    <span class="capability-badge" data-i18n="cap_optimization">Optimization</span>
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="tools-section">
+                <h3 class="tools-title" data-i18n="tools_title">Tools & Frameworks</h3>
+
+                <div class="tools-group">
+                    <h4 class="tools-subtitle" data-i18n="tools_ai">AI / Machine Learning</h4>
+                    <div class="tools-grid">
+                        <span class="tool-item">PyTorch</span>
+                        <span class="tool-item">Scikit-learn</span>
+                        <span class="tool-item">CNNs / YOLO</span>                   
+                        <span class="tool-item">Transformers (BERT, DistilBERT)</span>
+                    </div>
+                </div>
+
+                <div class="tools-group">
+                    <h4 class="tools-subtitle" data-i18n="tools_web">Web Development</h4>
+                    <div class="tools-grid">
+                        <span class="tool-item">JavaScript</span>
+                        <span class="tool-item">React</span>
+                        <span class="tool-item">PHP</span>
+                        <span class="tool-item">Node.js</span>
+                        <span class="tool-item">HTML & CSS</span>
+                    </div>
+                </div>
+
+                <div class="tools-group">
+                    <h4 class="tools-subtitle" data-i18n="tools_data">Data & Databases</h4>
+                    <div class="tools-grid">
+                        <span class="tool-item">Python</span>
+                        <span class="tool-item">Pandas & NumPy</span>
+                        <span class="tool-item">PostgreSQL</span>
+                        <span class="tool-item">MongoDB</span>
+                    </div>
+                </div>
+
+                <div class="tools-group">
+                    <h4 class="tools-subtitle" data-i18n="tools_tools">Tools</h4>
+                    <div class="tools-grid">
+                        <span class="tool-item">Git & GitHub</span>
+                        <span class="tool-item">Docker</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="projects_title">Projects & Achievements</h2>
+                <div class="title-line-decoration"></div>
+            </div>
+
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-image project1"></div>
+                    <div class="project-overlay">
+                        <h3 class="project-title" data-i18n="proj1_title">
+                            LegalLens: Contract Analysis System
+                        </h3>
+                        <p class="project-description" data-i18n="proj1_desc">
+                            AI system for contract classification and key information extraction, reducing manual review effort and improving efficiency.                        
+                        </p>
+                        <div class="project-tech">
+                            <span>BERT</span>
+                            <span>Python</span>
+                            <span>FastAPI</span>
+                            <span>NLP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image project2"></div>
+                    <div class="project-overlay">
+                        <h3 class="project-title" data-i18n="proj2_title">
+                            Tuberculosis Detection from X-rays
+                        </h3>
+                        <p class="project-description" data-i18n="proj2_desc">
+                            Built a deep learning model for tuberculosis detection from chest X-rays, 
+                            improving diagnostic accuracy and supporting early disease detection.
+                        </p>
+                        <div class="project-tech">
+                            <span>CNN</span>
+                            <span>Python</span>
+                            <span>OpenCV</span>
+                            <span>PyTorch</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image project3"></div>
+                    <div class="project-overlay">
+                        <h3 class="project-title" data-i18n="proj3_title">
+                            Tree Age Classification System
+                        </h3>
+                        <p class="project-description" data-i18n="proj3_desc">
+                            Developed a deep learning model to estimate tree age from images, 
+                            applying computer vision techniques for environmental analysis.
+                        </p>
+                        <div class="project-tech">
+                            <span>CNN</span>
+                            <span>PyTorch</span>
+                            <span>Computer Vision</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image project4"></div>
+                    <div class="project-overlay">
+                        <h3 class="project-title" data-i18n="proj4_title">
+                            Interactive Web Application
+                        </h3>
+                        <p class="project-description" data-i18n="proj4_desc">
+                            Designed and developed a responsive web application with dynamic features, 
+                            focusing on user experience and clean interface design.
+                        </p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>React/Node.js</span>
+                            <span>PHP</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Achievements -->
+        <div class="achievements-section">
+            <h2 class="achievements-title" data-i18n="achievements_title">Achievements</h2>
+
+            <div class="achievements-grid">
+
+                <div class="achievement-card">
+                    <img src="projects/smart-station.png" alt="Smart Stations Program">
+                    <h4 data-i18n="ach1_title">Smart Stations – Jordan TV</h4>
+                    <p data-i18n="ach1_desc">
+                        Worked as a writer and assistant director on the "Smart Stations" program at Jordan TV, focusing on AI and digital innovation in Jordan.
+                    </p>
+                </div>
+
+                <div class="achievement-card">
+                    <img src="projects/Talaqee.png" alt="Talaqee Platform">
+                    <h4 data-i18n="ach2_title">Talaqee Platform</h4>
+                    <p data-i18n="ach2_desc">
+                        Contributed to building and improving the Talaqee platform, 
+                        working on web development features and enhancing user experience.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="exp_title">Experience</h2>
+                <div class="title-line-decoration"></div>
+            </div>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date" data-i18n="exp1_date">2022 - Present</div>
+                        <h3 class="timeline-title" data-i18n="exp1_role">Senior AI Engineer</h3>
+                        <h4 class="timeline-company">EntreViable & Freelancer</h4>
+                        <p class="timeline-description" data-i18n="exp1_desc">
+                            Developing AI-powered systems for real-world applications, 
+                            including NLP and computer vision projects. 
+                            Built and deployed machine learning models and integrated them into web-based systems.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date" data-i18n="exp2_date">2020 - Present</div>
+                        <h3 class="timeline-title" data-i18n="exp2_role">Data Scientist</h3>
+                        <h4 class="timeline-company">EntreViable & Freelancer</h4>
+                        <p class="timeline-description" data-i18n="exp2_desc">
+                            Worked on multiple machine learning projects including predictive modeling, classification, 
+                            and data analysis, applying statistical and deep learning techniques.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date" data-i18n="exp3_date">2018 - Present</div>
+                        <h3 class="timeline-title" data-i18n="exp3_role">Full-Stack Developer</h3>
+                        <h4 class="timeline-company">EntreViable & Freelancer</h4>
+                        <p class="timeline-description" data-i18n="exp3_desc">
+                            Designed and developed responsive web applications, focusing on user experience and integrating 
+                            dynamic features using modern web technologies.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Connect</h2>
+                <div class="title-line-decoration"></div>
+            </div>
+            <div class="contact-content">
+                <p class="contact-text">
+                    Let's collaborate on building intelligent systems that solve real problems.
+                </p>
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/batool-madi" class="contact-link" target="_blank" rel="noopener noreferrer">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/BatoolMadi" class="contact-link" target="_blank" rel="noopener noreferrer">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="mailto:batoolsawal@gmail.com" class="contact-link">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span>Email</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script src="script.js"></script>
+    <script src="lang.js"></script>
+</body>
+</html>
+
