@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="icons/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Portfolio | Data Science & Intelligent Systems</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,13 +28,15 @@
                 <li><a href="#projects" class="nav-link" data-i18n="nav_projects">Projects</a></li>
                 <li><a href="#experience" class="nav-link" data-i18n="nav_experience">Experience</a></li>
                 <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+                
+                <li class="lang-item">
+                    <button id="lang-toggle">
+                        <span class="lang-icon">🌐</span>
+                        <span class="lang-text">EN</span>
+                    </button>
+                </li>
             </ul>
-            <div class="language-switch">
-                <button id="lang-toggle">
-                    <span class="lang-icon">🌐</span>
-                    <span class="lang-text">EN</span>
-                </button>
-            </div>
+
         </div>
     </nav>
 
@@ -121,7 +124,24 @@
 
                 <div class="expertise-card">
                     <div class="card-icon">
-                        <img src="icons/brain.png" alt="Deep Learning">
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" 
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+
+                            <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/>
+                            <path d="M9 13a4.5 4.5 0 0 0 3-4"/>
+                            <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/>
+                            <path d="M3.477 10.896a4 4 0 0 1 .585-.396"/>
+                            <path d="M6 18a4 4 0 0 1-1.967-.516"/>
+                            <path d="M12 13h4"/>
+                            <path d="M12 18h6a2 2 0 0 1 2 2v1"/>
+                            <path d="M12 8h8"/>
+                            <path d="M16 8V5a2 2 0 0 1 2-2"/>
+                            <circle cx="16" cy="13" r=".5"/>
+                            <circle cx="18" cy="3" r=".5"/>
+                            <circle cx="20" cy="21" r=".5"/>
+                            <circle cx="20" cy="8" r=".5"/>
+                        </svg>
                     </div>
                     <h3 class="card-title" data-i18n="exp_dl_title">Deep Learning</h3>
                     <p class="card-description" data-i18n="exp_dl_desc">
@@ -136,8 +156,17 @@
 
                 <div class="expertise-card">
                     <div class="card-icon">
-                        <img src="icons/nlp.png" alt="Natural Language Processing">
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" 
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+
+                            <path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/>
+                            <path d="M7 11h10"/>
+                            <path d="M7 15h6"/>
+                            <path d="M7 7h8"/>
+                        </svg>
                     </div>
+
                     <h3 class="card-title" data-i18n="exp_nlp_title">Natural Language Processing</h3>
                     <p class="card-description" data-i18n="exp_nlp_desc">
                         Developing NLP systems for text classification, information extraction, 
@@ -151,7 +180,12 @@
 
                 <div class="expertise-card">
                     <div class="card-icon">
-                        <img src="icons/vision.png" alt="Computer Vision">
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" 
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            
+                            <path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="1"/><path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0"/>
+                        </svg>
                     </div>
                     <h3 class="card-title" data-i18n="exp_cv_title">Computer Vision</h3>
                     <p class="card-description" data-i18n="exp_cv_desc">
@@ -166,7 +200,12 @@
 
                 <div class="expertise-card">
                     <div class="card-icon">
-                        <img src="icons/deep-learning.png" alt="ML Pipelines">
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" 
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+
+                            <path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/>               
+                        </svg>
                     </div>
                     <h3 class="card-title" data-i18n="exp_ml_title">ML Pipelines</h3>
                     <p class="card-description" data-i18n="exp_ml_desc">
@@ -181,7 +220,12 @@
 
                 <div class="expertise-card">
                     <div class="card-icon">
-                        <img src="icons/settings.png" alt="Intelligent Web Systems">
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" 
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+
+                            <path d="M16.466 7.5C15.643 4.237 13.952 2 12 2 9.239 2 7 6.477 7 12s2.239 10 5 10c.342 0 .677-.069 1-.2"/><path d="m15.194 13.707 3.814 1.86-1.86 3.814"/><path d="M19 15.57c-1.804.885-4.274 1.43-7 1.43-5.523 0-10-2.239-10-5s4.477-5 10-5c4.838 0 8.873 1.718 9.8 4"/>
+                        </svg>
                     </div>
                     <h3 class="card-title" data-i18n="exp_web_title">Intelligent Web Systems</h3>
                     <p class="card-description" data-i18n="exp_web_desc">
@@ -196,7 +240,12 @@
 
                 <div class="expertise-card">
                     <div class="card-icon">
-                        <img src="icons/exploratory-analysis.png" alt="Data Science">
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" 
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+
+                            <path d="M13 17V9"/><path d="M18 17V5"/><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M8 17v-3"/>
+                        </svg>
                     </div>
                     <h3 class="card-title" data-i18n="exp_ds_title">Data Science</h3>
                     <p class="card-description" data-i18n="exp_ds_desc">

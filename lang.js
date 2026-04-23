@@ -223,7 +223,7 @@ const translations = {
         exp3_role: "مطورة ويب",
         exp3_desc: "تطوير تطبيقات ويب.",
 
-        contact_title: "تواصل",
+        contact_title: "تواصل الآن",
         contact_text: "لنعمل معًا على بناء أنظمة ذكية تحل مشاكل حقيقية.",
         contact_linkedin: "لينكدإن",
         contact_github: "جيت هب",
@@ -235,13 +235,7 @@ const toggleBtn = document.getElementById("lang-toggle");
 
 function setLanguage(lang) {
     document.documentElement.lang = lang;
-
-    // RTL
-    if (lang === "ar") {
-        document.body.dir = "rtl";
-    } else {
-        document.body.dir = "ltr";
-    }
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
 
     // تغيير النصوص
     document.querySelectorAll("[data-i18n]").forEach(el => {
@@ -251,7 +245,15 @@ function setLanguage(lang) {
 
     // زر اللغة
     const langText = document.querySelector(".lang-text");
-    langText.textContent = lang === "ar" ? "AR" : "EN";
+    const langIcon = document.querySelector(".lang-icon");
+
+    if (lang === "ar") {
+        langText.textContent = "AR";
+        langIcon.innerHTML = '<img src="https://flagcdn.com/jo.svg" alt="Jordan">';
+    } else {
+        langText.textContent = "EN";
+        langIcon.textContent = "🌐";
+    }
 
     localStorage.setItem("lang", lang);
 }
