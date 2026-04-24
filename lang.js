@@ -115,7 +115,19 @@ const translations = {
         contact_text: "Let's collaborate on building intelligent systems that solve real problems.",
         contact_linkedin: "LinkedIn",
         contact_github: "GitHub",
-        contact_email: "Email"
+        contact_email: "Email",
+
+        // Modal
+        modal_subtitle: "Thanks for your feedback! Your opinion matters.",
+        modal_name: "Name",
+        modal_email: "Email (optional)",
+        modal_feedback: "Feedback (optional)",
+        modal_submit: "Submit",
+
+        success_message: "Thank you for your feedback!",
+        name_required: "Name is required!",
+        spam_rated: "You already rated!",
+        invalid_email: "Please enter a valid email address."
     },
 
     ar: {
@@ -227,7 +239,19 @@ const translations = {
         contact_text: "لنعمل معًا على بناء أنظمة ذكية تحل مشاكل حقيقية.",
         contact_linkedin: "لينكدإن",
         contact_github: "جيت هب",
-        contact_email: "البريد الإلكتروني"
+        contact_email: "البريد الإلكتروني",
+
+        modal_subtitle: "شكراً لتقييمك! رأيك مهم",
+        modal_name: " الاسم",
+        modal_email: "البريد الإلكتروني (اختياري)",
+        modal_feedback: "ملاحظات (اختياري)",
+        modal_submit: "إرسال",
+
+        success_message: "شكراً لملاحظاتك!",
+
+        name_required: "الاسم مطلوب!",
+        spam_rated: "لقد قمت بالتقييم بالفعل!",
+        invalid_email: "يرجى إدخال بريد إلكتروني صحيح."
     }
 };
 
@@ -270,3 +294,4 @@ document.addEventListener("DOMContentLoaded", () => {
     const savedLang = localStorage.getItem("lang") || "en";
     setLanguage(savedLang);
 });
+
