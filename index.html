@@ -72,15 +72,75 @@
                     
                     <div class="profile-glow"></div>
                 </div>
+
                 <div class="profile-tags">
                     <span class="tag" data-i18n="tag_cv">Computer Vision</span>
                     <span class="tag" data-i18n="tag_nlp">NLP</span>
                     <span class="tag" data-i18n="tag_fullstack">Full-Stack Development</span>
                     <span class="tag" data-i18n="tag_ai">AI Systems</span>
                 </div>
+                <div class="rating-container">  
+                    <div class="average-rating">
+                        <span id="avgRating">0.0</span>/5
+                    </div>
+
+                    <div class="profile-rating" id="rating">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                </div>                
+
             </div>
         </div>
+        <div class="rating-modal" id="ratingModal">
+            <div class="rating-box">
+                <button class="close-btn" id="closeModal">✕</button>
+
+                <!-- النجوم المختارة -->
+                <div class="modal-stars" id="modalStars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+
+                <!-- رسالة -->
+                <p class="modal-subtitle" data-i18n="modal_subtitle">Thank you! your opinion matters.</p>
+
+                <!-- الاسم -->
+                <label class="field-label required" data-i18n="modal_name">Your Name</label>
+                <input type="text" class="popup-input" id="userName" required>
+
+                <!-- الايميل -->
+                <label class="field-label optional" data-i18n="modal_email">Email (optional)</label>
+                <input type="email" class="popup-input">
+
+                <!-- الفيدباك -->
+                <label class="field-label optional" data-i18n="modal_feedback">Feedback (optional)</label>
+                <textarea class="popup-textarea"></textarea>
+
+                <button class="popup-btn" data-i18n="modal_submit">Submit</button>
+            </div>
+
+        </div>
     </section>
+
+    <!-- Success Messages -->
+    <div class="message" id="successMessage">
+        <div class="msg-box">
+            <p data-i18n="success_message">Thank you for your feedback!</p>
+        </div>
+    </div>
+
+    <div class="message" id="feedbackMessage">
+        <div class="msg-box">
+            <p data-i18n="spam_rated" id="feedbackText">You already rated!</p>
+        </div>
+    </div>
 
     <!-- About Section -->
     <section class="about" id="about">
@@ -532,8 +592,19 @@
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script src="script.js"></script>
     <script src="./lang.js"></script>
+    
+    <script>
+    (function(){
+        emailjs.init("VdkNfkudIKW_CUGYv");
+    })();
+    </script>
+
+    <!-- rating -->
+    <script type="module" src="./rating.js"></script>
+    
 </body>
 </html>
 

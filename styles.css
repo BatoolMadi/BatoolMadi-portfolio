@@ -33,10 +33,8 @@ body {
     font-weight: 400;
 }
 
-body[dir="rtl"] {
-    font-family: 'Cairo', sans-serif;
-    line-height: 1.8;
-    letter-spacing: 0;
+html[dir="rtl"] body {
+    font-family: 'Cairo', sans-serif !important;
 }
 
 /* Navigation */
@@ -175,6 +173,7 @@ body[dir="rtl"] {
     display: grid;
     grid-template-columns: 1fr 400px;
     gap: 4rem;
+    position: relative;
     align-items: center;
 }
 
@@ -392,6 +391,286 @@ body[dir="rtl"] {
     border-color: var(--color-accent-blue);
     box-shadow: 0 0 15px var(--glow-blue);
     transform: translateY(-2px);
+}
+
+.profile-rating {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    gap: 5px;
+}
+
+.average-rating {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 6px;
+    text-align: center;
+    pointer-events: none;
+}
+.average-rating span {
+    color: var(--color-text-secondary); 
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(74, 158, 255, 0.8); 
+}
+
+.star {
+    font-size: 25px;
+    color: #777;
+    cursor: pointer;
+    text-shadow: 0 0 8px #4a9eff;
+    transition: all 0.3s ease;
+}
+.star.active {
+    color: #FFD400;
+    text-shadow: 0 0 8px #FFD400, 0 0 15px #FFD400;
+}
+.star:hover {
+    color: #FFD400;
+    text-shadow: 0 0 8px #FFD400, 0 0 15px #FFD400;
+    transform: scale(1.2);
+
+}
+/* الخلفية */
+.rating-modal {
+    position: absolute;
+    inset: 0; /* يغطي الهيرو فقط */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* لما يظهر */
+.rating-modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* الصندوق */
+.rating-box {
+    width: 300px;
+    padding: 20px;
+    border-radius: 16px;
+    border:3px solid rgba(55, 65, 125, 0.7);
+
+    background: rgba(20, 20, 40, 0.7);
+    backdrop-filter: blur(15px);
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* animation */
+.rating-modal.show .rating-box {
+    transform: scale(1);
+}
+
+/* inputs */
+.popup-input,
+.popup-textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+
+    background: rgba(255,255,255,0.05);
+    color: white;
+}
+
+.popup-textarea {
+    resize: none;
+    height: 80px;
+}
+
+/* زر */
+.popup-btn {
+    background: linear-gradient(90deg, #4a9eff, #8b7cf6);
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.popup-input,
+.popup-textarea {
+    background: rgba(255,255,255,0.05);
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    color: white;
+    outline: none;
+}
+
+.popup-textarea {
+    resize: none;
+    height: 60px;
+}
+
+.popup-btn {
+    background: linear-gradient(90deg, #4a9eff, #8b7cf6);
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+/* نجوم المودال */
+.modal-stars {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    font-size: 22px;
+}
+
+.modal-stars .star {
+    color: #555;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.modal-stars .star:hover {
+    transform: scale(1.2);
+}
+.modal-stars .star.active {
+    color: gold;
+    text-shadow: 0 0 8px gold;
+}
+
+/* النص */
+.modal-subtitle {
+    font-size: 13px;
+    color: #ccc;
+    text-align: center;
+}
+
+/* labels */
+.field-label {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.field-label.required::after {
+    content: " *";
+    color: red;
+}
+
+.field-label.optional {
+    color: #888;
+}
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+
+    background: transparent;
+    border: none;
+
+    font-size: 18px;
+    color: #aaa;
+    cursor: pointer;
+
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+
+    transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+    color: #fff;
+    transform: scale(1.2);
+}
+.popup-input.error {
+    border: 1px solid red;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+.message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    z-index: 100000;
+    
+    background: rgba(20, 20, 40, 0.6);
+    backdrop-filter: blur(12px);
+    
+    padding: 12px 20px;
+    border-radius: 10px;
+    
+    box-shadow: 0 0 15px rgba(139, 124, 246, 0.5);
+    
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    
+    color: white;
+    font-size: 0.9rem;
+}
+
+.message.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto; 
+}
+
+.custom-alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    z-index: 100000;
+    
+    background: rgba(20, 20, 40, 0.6);
+    backdrop-filter: blur(12px);
+    
+    padding: 12px 20px;
+    border-radius: 10px;
+    
+    box-shadow: 0 0 15px rgba(139, 124, 246, 0.5);
+    
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    
+    color: white;
+    font-size: 0.9rem;
+}
+
+.custom-alert.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto; 
+}
+.alert-box {
+    background: rgba(15, 20, 41, 0.9);
+    padding: 12px 20px;
+    border-radius: 10px;
+
+    border: 1px solid var(--color-accent-blue);
+
+    box-shadow: 0 0 15px var(--glow-blue);
+
+    color: var(--color-text-primary);
+    font-size: 14px;
+    text-align: center;
 }
 
 /* Section Styles */
