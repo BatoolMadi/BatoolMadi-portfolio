@@ -28,20 +28,33 @@ export async function saveRating(data) {
 }
 
 export async function getAverageRating() {
-    const querySnapshot = await getDocs(collection(db, "ratings"));
+    try {
+        const querySnapshot = await getDocs(collection(db, "ratings"));
 
-    let total = 0;
-    let count = 0;
+        let total = 0;
+        let count = 0;
 
-    querySnapshot.forEach((doc) => {
-        const data = doc.data();
+        querySnapshot.forEach((doc) => {
+            const data = doc.data();
+            const rating = Number(data.rating);
 
-        if (data.rating !== undefined) {
-            total += Number(data.rating);
-            count++;
+            if (!isNaN(rating) && rating >= 1 && rating <= 5) {
+                total += rating;
+                count++;
+            }
+        });
+
+
+        if (count === 0) {
+            return "0.0"; //  لازم return هون
         }
-    });
 
-    if (count === 0) return "0.0";
+        const avg = total / count;
 
+        return avg.toFixed(1); //  وهذا أهم return
+
+    } catch (error) {
+        console.error("Error getting average ❌", error);
+        return "0.0"; // 🔥 fallback
+    }
 }
