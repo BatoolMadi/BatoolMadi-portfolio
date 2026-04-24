@@ -1,6 +1,5 @@
 import { saveRating, getAverageRating } from "./firebase.js";
 
-
 // 🔥 حطيها هون فوق
 function showMessage(key, type = "success") {
     const box = document.getElementById("feedbackMessage");
@@ -27,7 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function loadAverage() {
         const avg = await getAverageRating();
-        avgElement.textContent = avg;
+
+        if (avgElement) {
+            avgElement.textContent = avg;
+        } else {
+            console.error("avgRating element not found ❌");
+        }
     }
 
     loadAverage();
@@ -98,9 +102,21 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // 🔹 inputs
+    const emailInput = document.querySelector('input[type="email"]');
+
+    // إزالة error عند التعديل
+    nameInput.addEventListener("input", () => {
+        nameInput.classList.remove("error");
+    });
+
+    emailInput.addEventListener("input", () => {
+        emailInput.classList.remove("error");
+    });
+
+
     // ✅ VALIDATION
     submitBtn.addEventListener("click", async () => {
-        
 
         if (localStorage.getItem("rated")) {
             showMessage("spam_rated", "error");
@@ -119,22 +135,22 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             nameInput.classList.remove("error");
 
-            const emailValue = document.querySelector('input[type="email"]').value;
+            const emailValue = emailInput.value;
             const messageValue = document.querySelector('.popup-textarea').value;
 
+            // ✅ EMAIL VALIDATION (optional)
             if (emailValue.trim() !== "") {
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
                 if (!emailRegex.test(emailValue)) {
-                    const emailInput = document.querySelector('input[type="email"]');
                     emailInput.classList.add("error");
-
                     showMessage("invalid_email", "error");
+
+                    submitBtn.disabled = false; // 🔥 أهم سطر
                     return;
                 }
             }
 
-            
             // 🔥 1. خزّن في Firebase
             await saveRating({
                 name: nameInput.value,
@@ -145,6 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             localStorage.setItem("rated", "true");
+
             await loadAverage();
 
             // 🔥 2. ابعت إيميل
@@ -168,13 +185,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         } catch (error) {
             console.error("Submission error ❌", error);
-            submitBtn.disabled = false;
+        } finally {
+            submitBtn.disabled = false; // 🔥 دايمًا يرجع يشتغل
         }
-    });
-
-    // إزالة الخطأ أول ما يكتب
-    nameInput.addEventListener("input", () => {
-        nameInput.classList.remove("error");
     });
 
     // ===== functions =====
